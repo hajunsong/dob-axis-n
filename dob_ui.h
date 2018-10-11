@@ -15,6 +15,11 @@ public:
     explicit DOB_ui(QWidget *parent = nullptr);
     ~DOB_ui();
 
+private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::DOB_ui *ui;
 };

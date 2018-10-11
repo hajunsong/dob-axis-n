@@ -26,11 +26,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        dob_ui.cpp
+        dob_ui.cpp \
+		dob.cpp
 
 HEADERS += \
         dob_ui.h \
-    matrix.h
+		matrix.h \
+		dob.h
 
 FORMS += \
         dob_ui.ui
