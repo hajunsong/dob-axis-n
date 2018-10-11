@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#define _USE_MATH_DEFINES
 #include <math.h>
 
 using namespace std;
@@ -14,20 +13,20 @@ typedef unsigned int uint;
 
 class Matrix {
 public:
-	uint rows = 0, cols = 0, len = 0;
-	vector<double> data;
+    uint rows = 0, cols = 0, len = 0;
+    vector<double> data;
 
-	Matrix(uint row, uint col = 1) {
-		rows = row;
-		cols = col;
-		len = rows * cols;
-		data.assign(len, 0);
-	}
-	Matrix() {}
-	~Matrix() {
-		data.clear();
-	}
-	Matrix t() {
+    Matrix(uint row, uint col = 1) {
+        rows = row;
+        cols = col;
+        len = rows * cols;
+        data.assign(len, 0);
+    }
+    Matrix() {}
+    ~Matrix() {
+        data.clear();
+    }
+    Matrix t() {
 		Matrix mat(cols, rows);
 		for (uint i = 0; i < rows; i++) {
 			for (uint j = 0; j < cols; j++) {
@@ -66,6 +65,7 @@ public:
 		for (uint i = 0; i < cols; i++) {
 			mat(row_indx, i) = data[row_indx*cols + i];
 		}
+        return mat;
 	}
 	void insertCol(Matrix mat_in, uint start_indx, uint end_indx) {
 		for (uint i = 0; i < rows; i++) {

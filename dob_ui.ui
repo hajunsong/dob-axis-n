@@ -1,6 +1,6 @@
 <ui version="4.0">
- <class>DOB</class>
- <widget class="QMainWindow" name="DOB" >
+ <class>DOB_ui</class>
+ <widget class="QMainWindow" name="DOB_ui" >
   <property name="geometry" >
    <rect>
     <x>0</x>
@@ -10,7 +10,7 @@
    </rect>
   </property>
   <property name="windowTitle" >
-   <string>DOB</string>
+   <string>DOB_ui</string>
   </property>
   <widget class="QMenuBar" name="menuBar" />
   <widget class="QToolBar" name="mainToolBar" />

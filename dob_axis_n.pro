@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2018-10-11T11:44:28
+# Project created by QtCreator 2018-10-11T12:01:09
 #
 #-------------------------------------------------
 
@@ -26,13 +26,14 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        dob.cpp
+        dob_ui.cpp
 
 HEADERS += \
-        dob.h
+        dob_ui.h \
+    matrix.h
 
 FORMS += \
-        dob.ui
+        dob_ui.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
