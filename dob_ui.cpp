@@ -17,6 +17,8 @@ void DOB_ui::on_pushButton_clicked()
     uint num_body = 3;
     DOB dob(num_body);
     dob.run();
+    ui->label_tot->setText(QString::number(dob.total_time));
+    ui->label_ave->setText(QString::number(dob.average_time));
 }
 
 void DOB_ui::on_pushButton_2_clicked()

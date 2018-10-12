@@ -178,6 +178,10 @@ void DOB::run()
         Yp_old = Yp;
         t_current += h;
     }
+
+    cout << "Total Processing Time : " << total_time << " ms" << endl;
+    average_time = total_time / ((end_time - start_time)/h);
+    cout << "Average Processing Time : " << average_time << " ms" << endl;
 }
 
 void DOB::analysis() {
@@ -189,7 +193,7 @@ void DOB::analysis() {
     generalized_mass_force();
     residual_analysis();
     end = clock();
-    cout << "Processing Time : " << static_cast<double>((end - start)) / 1000.0 << endl;
+    total_time += static_cast<double>((end - start));
 
     dynamics_analysis();
 

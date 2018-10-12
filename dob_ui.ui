@@ -40,6 +40,84 @@
      <string>Quit</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_tot">
+    <property name="geometry">
+     <rect>
+      <x>275</x>
+      <y>381</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>71</x>
+      <y>381</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Total Processing Time : </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>381</y>
+      <width>19</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ms</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>71</x>
+      <y>403</y>
+      <width>182</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Average Processing Time : </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ave">
+    <property name="geometry">
+     <rect>
+      <x>275</x>
+      <y>403</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>403</y>
+      <width>19</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ms</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -47,7 +125,7 @@
      <x>0</x>
      <y>0</y>
      <width>729</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

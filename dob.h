@@ -57,6 +57,7 @@ public:
     DOB(uint num_body);
     ~DOB();
     void run();
+    double total_time = 0, average_time = 0;
 private:
     uint num_body;
     Body* body;
