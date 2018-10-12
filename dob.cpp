@@ -17,7 +17,98 @@ DOB::DOB(uint numbody)
     body[0].C01 = Matrix::eye(3);
     body[0].s01p = Vector::zeros(3);
 
-    if (num_body >= 1){
+    switch(num_body){
+    case 6:
+        // body 6 variable
+        body[5].qi = 0;
+        body[5].qi_dot = 0;
+        body[5].m = 25;
+        body[5].Jip << 12, 0, 0,
+                0, 12, 0,
+                0, 0, 12;
+        body[5].rhoip << 0, -0.4, 0;
+        body[5].Cii << 0, 1, 0,
+                0, 0, 1,
+                1, 0, 0;
+        body[5].Cij << 0, -1, 0,
+                1, 0, 0,
+                0, 0, 1;
+        body[5].sijp << 0, -0.8, 0;
+        body[5].K = 1500;
+        goto CASE5;
+CASE5: case 5:
+        // body 5 variable
+        body[4].qi = 0;
+        body[4].qi_dot = 0;
+        body[4].m = 20;
+        body[4].Jip << 10, 0, 0,
+                0, 10, 0,
+                0, 0, 10;
+        body[4].rhoip << 0.35, 0, 0;
+        body[4].Cii << 0, 0, -1,
+                0, 1, 0,
+                1, 0, 0;
+        body[4].Cij << 0, -1, 0,
+                1, 0, 0,
+                0, 0, 1;
+        body[4].sijp << 0.7, 0, 0;
+        body[4].K = 1500;
+        goto CASE4;
+CASE4: case 4:
+        // body 4 variable
+        body[3].qi = 0;
+        body[3].qi_dot = 0;
+        body[3].m = 15;
+        body[3].Jip << 7, 0, 0,
+                0, 7, 0,
+                0, 0, 7;
+        body[3].rhoip << 0, 0.3, 0;
+        body[3].Cii << 0, -1, 0,
+                0, 0, -1,
+                1, 0, 0;
+        body[3].Cij << 0, -1, 0,
+                1, 0, 0,
+                0, 0, 1;
+        body[3].sijp << 0, 0.6, 0;
+        body[3].K = 1500;
+        goto CASE3;
+CASE3: case 3:
+        // body 3 variable
+        body[2].qi = 0;
+        body[2].qi_dot = 0;
+        body[2].m = 10;
+        body[2].Jip << 5, 0, 0,
+                0, 5, 0,
+                0, 0, 5;
+        body[2].rhoip << -0.25, 0, 0;
+        body[2].Cii << 0, 0, 1,
+                0, -1, 0,
+                0, 0, 1;
+        body[2].Cij << 0, -1, 0,
+                1, 0, 0,
+                0, 0, 1;
+        body[2].sijp << -0.5, 0, 0;
+        body[2].K = 1500;
+        goto CASE2;
+CASE2: case 2:
+        // body 2 variable
+        body[1].qi = 0;
+        body[1].qi_dot = 0;
+        body[1].m = 5;
+        body[1].Jip << 3, 0, 0,
+                0, 3, 0,
+                0, 0, 3;
+        body[1].rhoip << 0, -0.2, 0;
+        body[1].Cii << 0, 1, 0,
+                0, 0, 1,
+                1, 0, 0;
+        body[1].Cij << 0, -1, 0,
+                1, 0, 0,
+                0, 0, 1;
+        body[1].sijp << 0, -0.4, 0;
+        body[1].K = 1500;
+        goto CASE1;
+CASE1 : case 1:
         // body 1 variable
         body[0].qi = 0;
         body[0].qi_dot = 0;
@@ -34,96 +125,6 @@ DOB::DOB(uint numbody)
                 0, 0, 1;
         body[0].sijp << 0.3, 0, 0;
         body[0].K = 1500;
-        if (num_body >= 2){
-            // body 2 variable
-            body[1].qi = 0;
-            body[1].qi_dot = 0;
-            body[1].m = 5;
-            body[1].Jip << 3, 0, 0,
-                    0, 3, 0,
-                    0, 0, 3;
-            body[1].rhoip << 0, -0.2, 0;
-            body[1].Cii << 0, 1, 0,
-                    0, 0, 1,
-                    1, 0, 0;
-            body[1].Cij << 0, -1, 0,
-                    1, 0, 0,
-                    0, 0, 1;
-            body[1].sijp << 0, -0.4, 0;
-            body[1].K = 1500;
-            if (num_body >= 3){
-                // body 3 variable
-                body[2].qi = 0;
-                body[2].qi_dot = 0;
-                body[2].m = 10;
-                body[2].Jip << 5, 0, 0,
-                        0, 5, 0,
-                        0, 0, 5;
-                body[2].rhoip << -0.25, 0, 0;
-                body[2].Cii << 0, 0, 1,
-                        0, -1, 0,
-                        0, 0, 1;
-                body[2].Cij << 0, -1, 0,
-                        1, 0, 0,
-                        0, 0, 1;
-                body[2].sijp << -0.5, 0, 0;
-                body[2].K = 1500;
-                if (num_body >= 4){
-                    // body 4 variable
-                    body[3].qi = 0;
-                    body[3].qi_dot = 0;
-                    body[3].m = 15;
-                    body[3].Jip << 7, 0, 0,
-                            0, 7, 0,
-                            0, 0, 7;
-                    body[3].rhoip << 0, 0.3, 0;
-                    body[3].Cii << 0, -1, 0,
-                            0, 0, -1,
-                            1, 0, 0;
-                    body[3].Cij << 0, -1, 0,
-                            1, 0, 0,
-                            0, 0, 1;
-                    body[3].sijp << 0, 0.6, 0;
-                    body[3].K = 1500;
-                    if (num_body >= 5){
-                        // body 5 variable
-                        body[4].qi = 0;
-                        body[4].qi_dot = 0;
-                        body[4].m = 20;
-                        body[4].Jip << 10, 0, 0,
-                                0, 10, 0,
-                                0, 0, 10;
-                        body[4].rhoip << 0.35, 0, 0;
-                        body[4].Cii << 0, 0, -1,
-                                0, 1, 0,
-                                1, 0, 0;
-                        body[4].Cij << 0, -1, 0,
-                                1, 0, 0,
-                                0, 0, 1;
-                        body[4].sijp << 0.7, 0, 0;
-                        body[4].K = 1500;
-                        if (num_body >= 6){
-                            // body 6 variable
-                            body[5].qi = 0;
-                            body[5].qi_dot = 0;
-                            body[5].m = 25;
-                            body[5].Jip << 12, 0, 0,
-                                    0, 12, 0,
-                                    0, 0, 12;
-                            body[5].rhoip << 0, -0.4, 0;
-                            body[5].Cii << 0, 1, 0,
-                                    0, 0, 1,
-                                    1, 0, 0;
-                            body[5].Cij << 0, -1, 0,
-                                    1, 0, 0,
-                                    0, 0, 1;
-                            body[5].sijp << 0, -0.8, 0;
-                            body[5].K = 1500;
-                        }
-                    }
-                }
-            }
-        }
     }
 
     // define Y vector
@@ -165,7 +166,14 @@ void DOB::run()
             body[i].r_hat = body[i].K*(Y(2*num_body + i) - body[i].p);
         }
 
-        printf("Time : %.5f[s] Position1 : %.10f[rad] Position1 : %.10f[rad] Position1 : %.10f[rad] R : %.5f[Nm]\n", t_current, body[0].qi, body[1].qi, body[2].qi, body[0].r_hat);
+        printf("Time : %.5f[s]", t_current);
+        for(uint i = 0; i < num_body; i++){
+            printf("Position1 : %.10f[rad] ", body[i].qi);
+        }
+        for(uint i = 0; i < num_body; i++){
+            printf("R : %.5f[Nm] ", body[i].r_hat);
+        }
+        printf("\n");
 
         Yp_old = Yp;
         t_current += h;
@@ -202,8 +210,8 @@ void DOB::kinematics_analysis() {
     for (uint i = 0; i < num_body; i++) {
         // Orientation
         body[i].Aijpp << cos(body[i].qi), -sin(body[i].qi), 0,
-            sin(body[i].qi), cos(body[i].qi), 0,
-            0, 0, 1;
+                sin(body[i].qi), cos(body[i].qi), 0,
+                0, 0, 1;
         if (i == 0) {
             body[i].Ai = body[i].A0 * body[i].C01*body[i].Aijpp;
             body[i].Hi = body[i].A0 * body[i].C01*body[i].u_vec;
@@ -233,7 +241,7 @@ void DOB::generalized_mass_force() {
         // Velocity State
         body[i].rit = body[i].ri.tilde();
         body[i].Bi = body[i].rit * body[i].Hi
-            << body[i].Hi;
+                << body[i].Hi;
         if (i == 0) {
             body[i].Yih = body[i].Bi * body[i].qi_dot;
         }
@@ -242,7 +250,7 @@ void DOB::generalized_mass_force() {
         }
         // Cartesian Velocity
         body[i].Ti = (Matrix::eye(3), -body[i].rit)
-            << (Matrix::zeros(3, 3), Matrix::eye(3));
+                << (Matrix::zeros(3, 3), Matrix::eye(3));
         body[i].Yib = body[i].Ti * body[i].Yih;
         body[i].ri_dot << body[i].Yib(0), body[i].Yib(1), body[i].Yib(2);
         body[i].wi << body[i].Yib(3), body[i].Yib(4), body[i].Yib(5);
@@ -252,11 +260,11 @@ void DOB::generalized_mass_force() {
         body[i].rict = body[i].ric.tilde();
         body[i].rict_dot = body[i].ric_dot.tilde();
         body[i].Mih = ((Matrix::eye(3)*body[i].m, -body[i].m * body[i].rict)
-            << (body[i].m*body[i].rict, body[i].Jic - body[i].m * body[i].rict*body[i].rict));
+                       << (body[i].m*body[i].rict, body[i].Jic - body[i].m * body[i].rict*body[i].rict));
         body[i].Fic << 0, 0, body[i].m*g;
         body[i].Tic << 0, 0, 0;
         body[i].Qih = body[i].Fic + body[i].m * body[i].rict_dot*body[i].wi
-            << body[i].Tic + body[i].rict * body[i].Fic + body[i].m * body[i].rict*body[i].rict_dot*body[i].wi - body[i].wit * body[i].Jic*body[i].wi;
+                << body[i].Tic + body[i].rict * body[i].Fic + body[i].m * body[i].rict*body[i].rict_dot*body[i].wi - body[i].wit * body[i].Jic*body[i].wi;
         // Velocity Coupling
         body[i].rit_dot = body[i].ri_dot.tilde();
         if (i == 0) {
@@ -266,7 +274,7 @@ void DOB::generalized_mass_force() {
             body[i].dHi = body[i - 1].wit*body[i].Hi;
         }
         body[i].Di = (body[i].rit_dot*body[i].Hi + body[i].rit * body[i].dHi
-            << body[i].dHi)*body[i].qi_dot;
+                      << body[i].dHi)*body[i].qi_dot;
 
         body[i].err_vel = body[i].des_vel - body[i].qi_dot;
         body[i].err_vel_accum += body[i].err_vel*h;
@@ -296,7 +304,7 @@ void DOB::residual_analysis(){
 
         body[i].Fg = -(body[i].Fic << body[i].rict*body[i].Fic);
         body[i].Tg = (body[i].Bi.t()*(body[i].Fg - body[i].Ki*D_temp))(0);
-//        body[i].Tg = 0;
+        //        body[i].Tg = 0;
 
         body[i].Ta = body[i].T_control + body[i].Tg;
 

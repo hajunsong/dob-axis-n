@@ -4,6 +4,9 @@
 #include "matrix.h"
 #include <time.h>
 
+#define simulation
+#define experiment
+
 class Body
 {
 public:
